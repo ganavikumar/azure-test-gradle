@@ -18,7 +18,7 @@ steps:
     gradleBuildFile: 'build.gradle'
     tasks: 'artifactoryPublish'
     artifactoryResolverService: 'anony1'
-    sourceRepo: 'ganavik-gradle-release'
+    sourceRepo: 'ganavik-gradle-release-local'
     artifactoryDeployerService: 'anony1'
     targetRepo: 'ganavik-gradle-release-local'
     usesPlugin: false
