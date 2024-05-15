@@ -52,7 +52,6 @@ configure(javaProjects()) {
     dependencies {
         testImplementation 'junit:junit:4.7'
         implementation group: 'log4j', name: 'log4j', version: '1.2.17'
-        implementation "core-0.0.1-sources.jar"
     }
 
     publishing {
