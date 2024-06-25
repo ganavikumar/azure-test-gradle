@@ -34,7 +34,7 @@ allprojects {
         //          username = "tatarao"
         //          password = "Password1*"
         //      }
-        // }
+         }
 }
 
 // Setting this property to true will make the artifactoryPublish task
