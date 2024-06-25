@@ -29,11 +29,16 @@ allprojects {
      status = 'Integration'
     repositories {
                    mavenCentral()
-        //     url "https://artdocker.mdmohsinaliaws.com/artifactory/ganavik-gradle-dev"
-        //     credentials {
-        //          username = "tatarao"
-        //          password = "Password1*"
-        //      }
+          maven{
+                
+            url "https://artdocker.mdmohsinaliaws.com/artifactory/ganavik-gradle-dev"
+                 authentication {
+            basic(BasicAuthentication)
+        }
+            credentials {
+                 username = "tatarao"
+                 password = "Password1*"
+             }
          }
 }
 
