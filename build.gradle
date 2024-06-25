@@ -29,11 +29,11 @@ allprojects {
      status = 'Integration'
     repositories {
                    mavenCentral()
-            // url "https://pipeline1.jfrog.io/artifactory/ganavi-gradle-release"
-            // credentials {
-            //     username = "ganavitest1"
-            //     password = "Password1*"
-            // }
+            url "https://artdocker.mdmohsinaliaws.com/artifactory/ganavik-gradle-dev"
+            credentials {
+                 username = "tatarao"
+                 password = "Password1*"
+             }
         }
 }
 
