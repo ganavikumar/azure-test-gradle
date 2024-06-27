@@ -7,10 +7,10 @@ repositories {
 }
 
 dependencies {
-    testCompile "junit:junit:3.8.1"
-    compile "org.jbundle.util:org.jbundle.util.jbackup:2.0.0"
-    compile "net.sf.webtestfixtures:webtestfixtures:2.0.1.3"
-    compile "org.shoal:shoal-gms-api:1.5.8"
-    compile "org.ow2.util:util-i18n:1.0.22"
-    compile "com.sun.grizzly:grizzly-lzma:1.9.19-beta5"
+    testImplementation 'junit:junit:4.7'
+    implementation "org.jbundle.util:org.jbundle.util.jbackup:2.0.0"
+    implementation "net.sf.webtestfixtures:webtestfixtures:2.0.1.3"
+    implementation "org.shoal:shoal-gms-api:1.5.8"
+    implementation "org.ow2.util:util-i18n:1.0.22"
+    implementation "com.sun.grizzly:grizzly-lzma:1.9.19-beta5"
 }
