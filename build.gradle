@@ -7,10 +7,7 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'junit:junit:4.7'
-    implementation "org.jbundle.util:org.jbundle.util.jbackup:2.0.0"
-    implementation "net.sf.webtestfixtures:webtestfixtures:2.0.1.3"
-    implementation "org.shoal:shoal-gms-api:1.5.8"
-    implementation "org.ow2.util:util-i18n:1.0.22"
-    implementation "com.sun.grizzly:grizzly-lzma:1.9.19-beta5"
+   testİmplementation  'junit:junit:4.12'
+ androidTestİmplementation  'androidx.test:runner:1.1.1'
+ androidTestİmplementation  'androidx.test.espresso:espresso-core:3.1.1'
 }
