@@ -2,119 +2,15 @@ plugins {
     id("com.jfrog.artifactory") version "5.+"
 }
 
-def javaProjects() {
-    subprojects.findAll { new File(it.projectDir, 'src').directory }
+repositories {
+         mavenCentral()
 }
 
-allprojects {
-    apply plugin: 'com.jfrog.artifactory'
-    group = 'org.jfrog.test.gradle.publish'
-    version = '1.0.0' // Ensure this is defined
-    status = 'Integration'
-    
-    repositories {
-        mavenCentral()
-        // Uncomment and configure if you want to use this repository
-        // maven {
-        //     url "https://artdocker.mdmohsinaliaws.com/artifactory/ganavik-gradle-dev"
-        //     authentication {
-        //         basic(BasicAuthentication)
-        //     }
-        //     credentials {
-        //         username = "tatarao"
-        //         password = "Password1*"
-        //     }
-        // }
-    }
-}
-
-    dependencies {
-     testImplementation 'junit:junit:4.7'
-     implementation 'org.apache.logging.log4j:log4j-api:2.23.1'
-     implementation 'org.apache.logging.log4j:log4j-core:2.23.1'
-     implementation 'com.google.guava:guava:32.1.2-jre'
-    }
-
-// Setting this property to true will make the artifactoryPublish task
-// skip this module (in our case, the root module):
-artifactoryPublish.skip = true
-
-project('services') {
-    artifactoryPublish.skip = true
-}
-
-configure(javaProjects()) {
-    apply plugin: 'java'
-    apply plugin: 'maven-publish'
-
-    // dependencies {
-    //  testImplementation 'junit:junit:4.7'
-    //  implementation 'org.apache.logging.log4j:log4j-api:2.23.1'
-    //  implementation 'org.apache.logging.log4j:log4j-core:2.23.1'
-    // }
-
-    publishing {
-        publications {
-            mavenJava(MavenPublication) {
-                from components.java
-                artifact(file("$rootDir/gradle.properties"))
-            }
-        }
-    }
-}
-project('api') {
-    apply plugin: 'ivy-publish'
-
-    publishing {
-        publications {
-            ivyJava(IvyPublication) {
-                from components.java
-                artifact(file("$rootDir/settings.gradle")) {
-                    name "gradle-settings"
-                    extension "txt"
-                    type "text"
-                }
-                // The config below will add an extra attribute to the ivy.xml
-                // See http://ant.apache.org/ivy/history/latest-milestone/concept.html#extra
-                descriptor.withXml {
-                    asNode().info[0].attributes().put('e:architecture', 'amd64')
-                }
-            }
-        }
-    }
-
-    artifactoryPublish {
-        publications(publishing.publications.ivyJava)
-        properties {
-            simpleFile '**:**:**:*@*', simpleFile: 'only on settings file'
-        }
-    }
-}
-
-artifactory {
-    clientConfig.setIncludeEnvVars(true)
-    clientConfig.info.addEnvironmentProperty('test.adding.dynVar', new java.util.Date().toString())
-
-    contextUrl = 'http://127.0.0.1:8081/artifactory'
-    
-    publish {
-        // Uncomment and configure if you want to publish
-        // repository {
-        //     repoKey = 'libs-snapshot-local' // The Artifactory repository key to publish to
-        //     username = "${artifactory_user}" // The publisher user name
-        //     password = "${artifactory_password}" // The publisher password
-        //     ivy {
-        //         ivyLayout = '[organization]/[module]/ivy-[revision].xml'
-        //         artifactLayout = '[organization]/[module]/[revision]/[module]-[revision](-[classifier]).[ext]'
-        //         mavenCompatible = true // Convert any dots in an [organization] layout value to path separators, similar to Maven's groupId-to-path conversion. True if not specified
-        //     }
-        // }
-        defaults {
-            publications('mavenJava')
-            publishArtifacts = true
-            properties = ['qa.level': 'basic', 'dev.team': 'core']
-            publishPom = true
-            publishIvy = true
-        }
-    }
+dependencies {
+    testCompile "junit:junit:3.8.1"
+    compile "org.jbundle.util:org.jbundle.util.jbackup:2.0.0"
+    compile "net.sf.webtestfixtures:webtestfixtures:2.0.1.3"
+    compile "org.shoal:shoal-gms-api:1.5.8"
+    compile "org.ow2.util:util-i18n:1.0.22"
+    compile "com.sun.grizzly:grizzly-lzma:1.9.19-beta5"
 }
