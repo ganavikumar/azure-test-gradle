@@ -44,8 +44,9 @@ configure(javaProjects()) {
 
     dependencies {
      implementation 'org.apache.commons:commons-lang3:3.12.0'
-    testImplementation 'junit:junit:4.13.2'
-    implementation group: 'log4j', name: 'log4j', version: '1.2.17'
+     testImplementation 'junit:junit:4.13.2'
+    implementation group: 'log4j', name: 'log4j', version: '1.2.9'
+
 
     }
 
