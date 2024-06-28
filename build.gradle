@@ -28,7 +28,12 @@ allprojects {
     }
 }
 
+    dependencies {
+     testImplementation 'junit:junit:4.7'
+     implementation 'org.apache.logging.log4j:log4j-api:2.23.1'
+     implementation 'org.apache.logging.log4j:log4j-core:2.23.1'
 
+    }
 
 // Setting this property to true will make the artifactoryPublish task
 // skip this module (in our case, the root module):
@@ -42,12 +47,11 @@ configure(javaProjects()) {
     apply plugin: 'java'
     apply plugin: 'maven-publish'
 
-    dependencies {
-     testImplementation 'junit:junit:4.13.2'
-     implementation group: 'log4j', name: 'log4j', version: '1.2.9'
-
-
-    }
+    // dependencies {
+    //  testImplementation 'junit:junit:4.7'
+    //  implementation 'org.apache.logging.log4j:log4j-api:2.23.1'
+    //  implementation 'org.apache.logging.log4j:log4j-core:2.23.1'
+    // }
 
     publishing {
         publications {
