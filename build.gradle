@@ -6,7 +6,7 @@ def javaProjects() {
     subprojects.findAll { new File(it.projectDir, 'src').directory }
 }
 
-allprojects {
+//allprojects {
    // apply plugin: 'com.jfrog.artifactory'
     group = 'org.jfrog.test.gradle.publish'
     version = '1.0.0' // Ensure this is defined
@@ -25,7 +25,7 @@ allprojects {
         //         password = "Password1*"
         //     }
         // }
-    }
+    
 }
 
 
