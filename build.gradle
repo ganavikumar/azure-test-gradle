@@ -1,5 +1,5 @@
 plugins {
-    id("com.jfrog.artifactory") version "5.+"
+    // id("com.jfrog.artifactory") version "5.+"
 }
 
 def javaProjects() {
