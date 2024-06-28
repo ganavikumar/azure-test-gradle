@@ -127,3 +127,6 @@ artifactory {
             properties = ['qa.level': 'basic', 'dev.team' : 'core']
             publishPom = true // Publish generated POM files to Artifactory (true by default)
             publishIvy = true // Publish generated Ivy descriptor files to Artifactory (true by default)
+        }
+    }
+}
