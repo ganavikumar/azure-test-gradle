@@ -15,16 +15,16 @@ def javaProjects() {
     repositories {
         mavenCentral()
         // Uncomment and configure if you want to use this repository
-        // maven {
-        //     url "https://artdocker.mdmohsinaliaws.com/artifactory/ganavik-gradle-dev"
-        //     authentication {
-        //         basic(BasicAuthentication)
-        //     }
-        //     credentials {
-        //         username = "tatarao"
-        //         password = "Password1*"
-        //     }
-        // }
+        maven {
+            url "https://artdocker.mdmohsinaliaws.com/artifactory/ganavik-gradle-dev"
+            authentication {
+                basic(BasicAuthentication)
+            }
+            credentials {
+                username = "tatarao"
+                password = "Password1*"
+            }
+        }
     
 }
 
