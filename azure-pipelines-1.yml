@@ -21,7 +21,7 @@ steps:
     sourceRepo: 'ganavik-gradle-dev'
     artifactoryDeployerService: 'anony1'
     targetRepo: 'ganavik-gradle-dev'
-    usesPlugin: false
+    usesPlugin: true
     useWrapper: true
     collectBuildInfo: true
     buildName: '$(Build.DefinitionName)'
