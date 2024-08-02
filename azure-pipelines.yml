@@ -14,10 +14,10 @@ steps:
   inputs:
     gradleBuildFile: 'build.gradle'
     tasks: 'artifactoryPublish'
-    artifactoryResolverService: 'harshv'
-    sourceRepo: 'ganavik-gradle-dev'
-    artifactoryDeployerService: 'harshv'
-    targetRepo: 'ganavik-gradle-dev'
+    artifactoryResolverService: 'anony1'
+    sourceRepo: 'test-gradle-release'
+    artifactoryDeployerService: 'anony1'
+    targetRepo: 'test-gradle-release'
     usesPlugin: false
     useWrapper: true
     collectBuildInfo: true
