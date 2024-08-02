@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-plugins {
-   id "com.jfrog.artifactory" version "5.1.10"
-}
+// plugins {
+//    id "com.jfrog.artifactory" version "5.1.10"
+// }
 
 allprojects {
     repositories {
@@ -34,7 +34,7 @@ allprojects {
 
 version = currentVersion
 
-apply plugin: 'com.jfrog.artifactory'
+//apply plugin: 'com.jfrog.artifactory'
 apply plugin: 'java'
 apply plugin: 'maven-publish'
 
