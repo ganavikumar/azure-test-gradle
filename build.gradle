@@ -28,7 +28,7 @@ allprojects {
                  basic(BasicAuthentication)
              }
               credentials {
-                 username = "admin"
+                 username = "ganavik"
                    password = "Password1*"
              }
         }
