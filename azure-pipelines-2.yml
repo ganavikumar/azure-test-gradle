@@ -20,4 +20,4 @@ steps:
 - task: JfrogCli@1
   inputs:
     artifactoryService: 'ganavikoldext'
-    command: 'jf rt dl harshv-helm-local/index.yaml'
+    command: 'jfrog rt dl harshv-helm-local/index.yaml'
