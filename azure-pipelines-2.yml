@@ -17,9 +17,7 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
-- task: ArtifactoryGenericUpload@2
+- task: JfrogCli@1
   inputs:
     artifactoryService: 'ganavikoldext'
-    specSource: 'taskConfiguration'
-    failNoOp: true
-    insecureTls: true
+    command: 'jf rt dl harshv-helm-local/index.yaml'
